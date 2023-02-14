@@ -221,11 +221,16 @@ header {
 
   .navigation {
     display: none;
-
+    li{
+      width: 140px;
+      border-radius: 14px;
+      text-align: center;
+    }
     li a {
       font-size: 1.5em;
       margin: 10px 0;
       display: inline-block;
+      
     }
     &.active{
       position: fixed;
@@ -233,11 +238,16 @@ header {
       left: 0;
       width: 100%;
       height: 100%;
-      background: #d10a20;
+      background-color: #d10a20;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      transition: 1s;
+      :hover{
+        background-color: #fff;
+        color: red;
+      }
     }
   }
 
@@ -259,7 +269,7 @@ header {
       background: #fff;
       transform: translateY(-10px);
       box-shadow: 0 10px 0 #fff;
-      transition: 0.25s;
+      transition: 0.5s;
     }
 
     &::after {
@@ -269,17 +279,19 @@ header {
       height: 2px;
       background: #fff;
       transform: translateY(10px);
-      transition: 0.25s;
+      transition: 0.5s;
     }
     &.active{
-      position: fixed;
+      position: relative;
       right: 40px;
       &::before{
-        transform: translateY(0px) rotate(45deg);
+        transform: translate(0px) rotate(45deg);
         box-shadow: 0 0 0 #fff;
+        transition: 0.5s;
       }
       &::after{
-        transform: translateY(0px) rotate(-45deg);
+        transform: translate(0px) rotate(-45deg);
+        transition: 0.5s;
       }
     }
 
